@@ -44,7 +44,6 @@ services:
       - nginx-proxy
 
   app:
-    image: test-fe:latest
     restart: always
     build: .
     hostname: ${COMPOSE_PROJECT_NAME}-fe-app
