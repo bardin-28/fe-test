@@ -11,7 +11,7 @@ volumes:
 
 services:
   nginx-proxy:
-    image: nginx-proxy
+    image: nginxproxy/nginx-proxy
     build:
       context: ./docker/nginx-proxy
     ports:
