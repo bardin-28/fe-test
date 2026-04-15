@@ -15,6 +15,11 @@ services:
     image: nginxproxy/nginx-proxy
     build:
       context: ./docker/nginx-proxy
+      args:
+        - BASIC_AUTH=${BASIC_AUTH}
+        - BASIC_AUTH_USERNAME=${BASIC_AUTH_USERNAME}
+        - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
+        - BASIC_AUTH_HOST=${FRONTEND_HOST}
     ports:
       - "80:80"
       - "443:443"
@@ -49,7 +54,7 @@ services:
       - nginx-proxy
 
   app:
-    restart: always
+    restart: ${RESTART_POLICY}
     build: .
     hostname: ${COMPOSE_PROJECT_NAME}-fe-app
     environment:
