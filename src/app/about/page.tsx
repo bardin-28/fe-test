@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-export default function Home() {
+export default function About() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -15,11 +15,12 @@ export default function Home() {
           priority
         />
         <div className={styles.intro}>
-          <h1>Home FE</h1>
-          <nav className={styles.nav}>
-            <Link href="/">home</Link>
-            <Link href="/about">about</Link>
-          </nav>
+          <h1>About FE</h1>
+
+            <nav className={styles.nav}>
+                <Link href="/">home</Link>
+                <Link href="/about">about</Link>
+            </nav>
         </div>
       </main>
     </div>
