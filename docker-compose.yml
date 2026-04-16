@@ -32,6 +32,7 @@ services:
       - nginx-certs:/etc/nginx/certs
       - nginx-html:/usr/share/nginx/html
       - nginx-vhost:/etc/nginx/vhost.d
+      - ./docker/nginx-proxy/custom.conf:/etc/nginx/conf.d/custom.conf:ro
     networks:
       - app-frontend
 
